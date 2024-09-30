@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            text-align: center;
+            background-image: url("https://wallpapercave.com/wp/wp3942640.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+
+        }
+
+        form {
+            margin-top: 300px;
+        }
+
+        input {
+            width: 20%;
+            padding: 16px;
+            border-radius: 20px;
+            border: 3px solid #2920e6;
+            font-size: 12px;
+            box-sizing: border-box;
+        }
+
+        label {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            font-style: bold;
+            font-size: 20px;
+            text-shadow: -2px 2px 2px #af866f;
+            background-color: #bb1389;
+            padding: 8px 12px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        input[type="submit"] {
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+            width: auto;
+            font-style: bold;
+            font-size: 16px;
+            text-shadow: -2px 2px 2px #af866f;
+            background-color: rgb(167, 24, 115);
+            border: gray;
+        }
+    </style>
+    <form id="form" onsubmit="return checkForm(this)">
+        <label for="name">Name:</label>
+        <input type="text" placeholder="enter your name" name="name" id="name">
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age">
+        <input type="submit" value="done">
+    </form>
+    <script>
+        function checkForm(form) {
+            let name = form.name.value;
+            let age = form.age.value;
+            if (name === '' || age === '') {
+                alert('the form is empty')
+                return false
+            }
+            if (age < 18) {
+                alert('the age is less than 18')
+                return false
+            }
+            alert('form submitted sucessfully');
+            return true
+        }
+    </script>
+</body>
+
+</html>
